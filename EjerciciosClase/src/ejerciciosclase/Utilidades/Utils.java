@@ -8,6 +8,18 @@ import java.io.*;
  */
 public class Utils {
 
+    /**
+     * Forma abreviada de System.out.println. Introducir el mensaje que queramos
+     * representar
+     *
+     * @param mensaje
+     */
+    public static void sop(String mensaje) {
+
+        System.out.println(mensaje);
+
+    }
+
     public static String leerCadena() {
 
         InputStreamReader isr = null;
