@@ -10,12 +10,13 @@ import static ejerciciosclase.Utilidades.Utils.sop;
  */
 public class Ejercicio03 {
 
-    //final MULTIPLOS = 100;
+    static final int MULTIPLOS = 100;
+
     public static int contarMultiplos() {
 
         int contador = 0;
 
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i < MULTIPLOS; i++) {
 
             if (i % 5 == 0) {
 
@@ -33,7 +34,7 @@ public class Ejercicio03 {
 
         int suma = 0;
 
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i < MULTIPLOS; i++) {
 
             if (i % 5 == 0) {
 
@@ -49,7 +50,7 @@ public class Ejercicio03 {
 
     public static void leerMultiplos() {
 
-        for (int i = 1; i < 100; i++) {
+        for (int i = 1; i < MULTIPLOS; i++) {
 
             if (i % 5 == 0) {
 
