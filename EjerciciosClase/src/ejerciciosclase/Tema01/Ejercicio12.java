@@ -16,9 +16,9 @@ public class Ejercicio12 {
 
         sop("Introduzca una frase: ");
         String frase = leerCadena();
-        frase = quitarTildes(frase);
+        frase = limpiarFrase(frase);
         int c = contarCaracteres(frase);
-        sop("Su frase tiene " + c + " vocales.");
+        sop("Su frase tiene " + c + " vocales."); //mejor System.out.println();
 
     }
 
@@ -28,10 +28,7 @@ public class Ejercicio12 {
         for (int i = 0; i < frase.length(); i++) {
 
             if ((frase.charAt(i) == 'a') || (frase.charAt(i) == 'e') || (frase.charAt(i) == 'i')
-                    || (frase.charAt(i) == 'o') || (frase.charAt(i) == 'u')
-                    || (frase.charAt(i) == 'A') || (frase.charAt(i) == 'E')
-                    || (frase.charAt(i) == 'I') || (frase.charAt(i) == 'O')
-                    || (frase.charAt(i) == 'U')) {
+                    || (frase.charAt(i) == 'o') || (frase.charAt(i) == 'u')) {
 
                 c++;
 
@@ -42,18 +39,14 @@ public class Ejercicio12 {
 
     }
 
-    public static String quitarTildes(String frase) {
+    public static String limpiarFrase(String frase) {
 
+        frase = frase.toLowerCase(); //pasar a minuscula
         frase = frase.replace("á", "a");
         frase = frase.replace("é", "e");
         frase = frase.replace("í", "i");
         frase = frase.replace("ó", "o");
         frase = frase.replace("ú", "u");
-        frase = frase.replace("Á", "A");
-        frase = frase.replace("É", "E");
-        frase = frase.replace("Í", "I");
-        frase = frase.replace("Ó", "O");
-        frase = frase.replace("Ú", "U");
 
         return frase;
 

@@ -17,10 +17,8 @@ public class Ejercicio14 {
 
         sop("Introduzca una frase para ver si es palindroma o no: ");
         String frase = leerCadena();
-        frase = quitarTildes(frase);
-        frase = quitarEspaciosEnBlanco(frase);
-        esPalindroma(frase);
-        if (!(esPalindroma(frase))) {
+        frase = limpiarFrase(frase);
+        if ((esPalindroma(frase))) {
 
             sop("Es palindroma.");
 
@@ -32,26 +30,17 @@ public class Ejercicio14 {
 
     }
 
-    public static String quitarTildes(String frase) {
+    public static String limpiarFrase(String frase) {
 
+        frase = frase.toLowerCase(); //pasar a minuscula
+        frase = frase.replace(" ", ""); //quitar espacios en blanco
         frase = frase.replace("á", "a");
         frase = frase.replace("é", "e");
         frase = frase.replace("í", "i");
         frase = frase.replace("ó", "o");
         frase = frase.replace("ú", "u");
-        frase = frase.replace("Á", "A");
-        frase = frase.replace("É", "E");
-        frase = frase.replace("Í", "I");
-        frase = frase.replace("Ó", "O");
-        frase = frase.replace("Ú", "U");
 
         return frase;
-
-    }
-
-    public static String quitarEspaciosEnBlanco(String frase) {
-
-        return frase = frase.replace(" ", "");
 
     }
 
@@ -76,7 +65,7 @@ public class Ejercicio14 {
 
         }
 
-        return palindroma;
+        return !palindroma;
 
     }
 

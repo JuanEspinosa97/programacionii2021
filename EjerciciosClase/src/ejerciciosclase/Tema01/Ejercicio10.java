@@ -15,14 +15,14 @@ public class Ejercicio10 {
 
         System.out.print("Introduzca la dimension de la matriz cuadrada: ");
         int dimension = leerEntero();
-        int matrizCuadrada[][] = new int[dimension][dimension];
-
-        rellenarMatriz(matrizCuadrada);
+        int[][] matrizCuadrada = rellenarMatriz(dimension);
         imprimirMatriz(matrizCuadrada);
 
     }
 
-    public static void rellenarMatriz(int[][] matrizCuadrada) {
+    public static int[][] rellenarMatriz(int dimension) {
+
+        int matrizCuadrada[][] = new int[dimension][dimension];
 
         for (int i = 0; i < matrizCuadrada.length; i++) { // Introducir los valores aleatorios de la matriz
 
@@ -33,6 +33,8 @@ public class Ejercicio10 {
             }
 
         }
+
+        return matrizCuadrada;
 
     }
 

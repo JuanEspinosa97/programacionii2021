@@ -12,8 +12,9 @@ public class Ejercicio06 {
 
     static final int TAM = 100;
 
-    public static void calculaPrimos(int[] arrayPrimos) {
+    public static int[] calculaPrimos() {
 
+        int[] arrayPrimos = new int[100];
         int primos;
         int contador;
         int j = 0;
@@ -45,11 +46,12 @@ public class Ejercicio06 {
 
         }
 
+        return arrayPrimos;
     }
 
     public static void imprimirArrayPrimos(int[] arrayPrimos) {
 
-        for (int i = 0; i < TAM; i++) {
+        for (int i = 0; i < arrayPrimos.length; i++) {
 
             if (arrayPrimos[i] != 0) {
 
@@ -62,10 +64,8 @@ public class Ejercicio06 {
 
     public static void main(String[] args) {
 
-        int[] arrayPrimos = new int[TAM];
-
         sop("Lista de los 100 primeros numeros primos: ");
-        calculaPrimos(arrayPrimos);
+        int[] arrayPrimos = calculaPrimos();
         imprimirArrayPrimos(arrayPrimos);
 
     }

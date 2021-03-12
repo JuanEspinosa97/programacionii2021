@@ -12,10 +12,14 @@ import static ejerciciosclase.Utilidades.Utils.sop;
  */
 public class Ejercicio08 {
 
-    public static void pedirDatosAlUsuario(int[] datos) { //No consigo que los lea bien
+    public static int[] pedirDatosAlUsuario() {
 
-        for (int j = 0; j < 10; j++) {
-            datos[j] = -1;
+        int[] datos = new int[1000];
+
+        for (int i = 0; i < 1000; i++) {    //Evito que el array esté lleno de ceros y así el usuario puede introducir un cero para terminar
+
+            datos[i] = -1;
+
         }
 
         int i = 0;
@@ -23,30 +27,33 @@ public class Ejercicio08 {
         do {
 
             datos[i] = leerEntero();
-            i++;
             if (datos[i] == 0) {
 
-                return;
+                break;
 
             }
+            i++;
 
         } while (datos[i] != 0);
 
-        for (int j = 0; j < 10; j++) {
-            sop("" + datos[j]);
+        int[] array2 = new int[i + 1];  //llevar la cuenta de cuantas posiciones estan ocupadas
+
+        for (int j = 0; j <= i; j++) {
+
+            array2[j] = datos[j];
+
         }
+
+        return array2;
 
     }
 
-    public static void calcularMinimoYMaximo(int[] array, int[] datos) {
+    public static int[] calcularMinimoYMaximo(int[] datos) {
 
+        int[] array = new int[2];  //almacena el minimo y maximo
         int mayor = 0;
         int menor = Integer.MAX_VALUE;
         int i = 0;
-
-        for (int j = 0; j < 10; j++) {
-            sop("" + datos[j]);
-        }
 
         do {
 
@@ -69,9 +76,9 @@ public class Ejercicio08 {
         } while (datos[i] != 0);
 
         array[0] = menor;
-        sop("" + menor);
         array[1] = mayor;
-        sop("" + mayor);
+
+        return array;
 
     }
 
@@ -92,17 +99,33 @@ public class Ejercicio08 {
 
     }
 
+    public static double calcularMedia(int[] datos) {
+
+        double suma = 0;
+        int i = 0;
+
+        do {
+
+            suma += datos[i];
+            i++;
+
+        } while (i < datos.length - 1); //No queremos que cuente el cero introducido para salir
+
+        double media = suma / i;
+
+        return media;
+
+    }
+
     public static void main(String[] args) {
 
-        int[] datos = new int[10];
-        int[] array = new int[2];  //almacena el minimo y maximo
-
         sop("Introduzca numeros (para terminar, introduzca 0): ");
-        pedirDatosAlUsuario(datos);
-        //System.out.print("El numero menor y mayor de los introducidos por teclado son: ");
-        //calcularMinimoYMaximo(array, datos);
-        //imprimirMinimoYMaximo(array);
-        //sop(" respectivamente.");
+        int[] datos = pedirDatosAlUsuario();
+        System.out.print("El numero menor y mayor de los introducidos por teclado son: ");
+        int[] array = calcularMinimoYMaximo(datos);
+        imprimirMinimoYMaximo(array);
+        sop(" respectivamente.");
+        sop("La media de los numeros introducidos por teclado es: " + calcularMedia(datos));
 
     }
 

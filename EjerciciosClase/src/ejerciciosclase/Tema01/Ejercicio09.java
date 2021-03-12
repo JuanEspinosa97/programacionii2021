@@ -11,15 +11,19 @@ import static ejerciciosclase.Utilidades.Utils.sop;
  */
 public class Ejercicio09 {
 
-    static final int N = 2;
+    static final int N = 3;
 
-    public static void leerVector(int[] vector) {
+    public static int[] leerVector() {
+
+        int[] vector = new int[N];
 
         for (int i = 0; i < N; i++) {
 
             vector[i] = leerEntero();
 
         }
+
+        return vector;
 
     }
 
@@ -44,31 +48,29 @@ public class Ejercicio09 {
 
     }
 
-    public static void calcularProductoEscalar(int[] vector1, int[] vector2, int[] vectorResultado) {
+    public static int calcularProductoEscalar(int[] vector1, int[] vector2) {
+
+        int productoEscalar = 0;
 
         for (int i = 0; i < N; i++) {
 
-            vectorResultado[i] = vector1[i] * vector2[i];
+            productoEscalar += (vector1[i] * vector2[i]); //(3,2)*(1,1)=5
 
         }
+
+        return productoEscalar;
 
     }
 
     public static void main(String[] args) {
 
-        int[] vector1 = new int[N];
-        int[] vector2 = new int[N];
-        int[] vectorResultado = new int[N];
-
         sop("Introduzca el primer vector: ");
-        leerVector(vector1);
+        int[] vector1 = leerVector();
         imprimirVector(vector1);
         sop("Introduzca el segundo vector: ");
-        leerVector(vector2);
+        int[] vector2 = leerVector();
         imprimirVector(vector2);
-        sop("Su producto escalar es: ");
-        calcularProductoEscalar(vector1, vector2, vectorResultado);
-        imprimirVector(vectorResultado);
+        sop("Su producto escalar es: " + calcularProductoEscalar(vector1, vector2));
 
     }
 

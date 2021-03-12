@@ -15,65 +15,38 @@ public class Ejercicio11 {
 
     public static void main(String[] args) {
 
-        int filas1;
-        int columnas1;
-        int filas2;
-        int columnas2;
-
-        sop("Introduzca las dimensiones de la primera matriz. ");
-        sop("FILAS: ");
-        filas1 = leerEntero();
-        sop("COLUMNAS: ");
-        columnas1 = leerEntero();
+        int[][] matriz1 = solicitarMatriz();
 
         sop("MATRIZ 1: ");
-        imprimirDimensionesMatriz(filas1, columnas1);
+        imprimirMatriz(matriz1);
 
-        int matriz1[][] = new int[filas1][columnas1];
-
-        sop("Introduzca los elementos de la primera matriz. ");
-        rellenarMatriz(filas1, columnas1, matriz1);
-
-        sop("MATRIZ 1: ");
-        imprimirMatriz(filas1, columnas1, matriz1);
-
-        sop("Introduzca las dimensiones de la segunda matriz. ");
-        sop("FILAS: ");
-        filas2 = leerEntero();
-        sop("COLUMNAS: ");
-        columnas2 = leerEntero();
+        int matriz2[][] = solicitarMatriz();
 
         sop("MATRIZ 2: ");
-        imprimirDimensionesMatriz(filas2, columnas2);
+        imprimirMatriz(matriz2);
 
-        int matriz2[][] = new int[filas2][columnas2];
-
-        sop("Introduzca los elementos de la segunda matriz. ");
-        rellenarMatriz(filas2, columnas2, matriz2);
-
-        sop("MATRIZ 2: ");
-        imprimirMatriz(filas2, columnas2, matriz2);
-
-        int matrizResultado[][] = new int[filas1][columnas2];
-
-        multiplicarMatrices(filas1, filas2, columnas1, columnas2, matriz1, matriz2, matrizResultado);
+        int matrizResultado[][] = multiplicarMatrices(matriz1, matriz2);
 
         sop("MATRIZ RESULTADO: ");
-        imprimirMatriz(filas1, columnas2, matrizResultado);
+        imprimirMatriz(matrizResultado);
 
     }
 
-    public static void imprimirDimensionesMatriz(int filas, int columnas) {
+    public static int[][] solicitarMatriz() {
 
-        sop(+filas + " x " + columnas);
+        sop("Introduzca las dimensiones de la matriz. ");
+        sop("FILAS: ");
+        int filas = leerEntero();
+        sop("COLUMNAS: ");
+        int columnas = leerEntero();
 
-    }
+        int[][] matriz = new int[filas][columnas];
 
-    public static void rellenarMatriz(int filas, int columnas, int[][] matriz) {
+        sop("Introduzca los elementos de la matriz. ");
 
-        for (int i = 0; i < filas; i++) {
+        for (int i = 0; i < matriz.length; i++) {
 
-            for (int j = 0; j < columnas; j++) {
+            for (int j = 0; j < matriz[i].length; j++) {
 
                 matriz[i][j] = leerEntero();
 
@@ -81,13 +54,15 @@ public class Ejercicio11 {
 
         }
 
+        return matriz;
+
     }
 
-    public static void imprimirMatriz(int filas, int columnas, int[][] matriz) {
+    public static void imprimirMatriz(int[][] matriz) {
 
-        for (int i = 0; i < filas; i++) {
+        for (int i = 0; i < matriz.length; i++) {
 
-            for (int j = 0; j < columnas; j++) {
+            for (int j = 0; j < matriz[i].length; j++) {
 
                 System.out.print("" + matriz[i][j] + "");
                 System.out.print("\t");
@@ -99,16 +74,20 @@ public class Ejercicio11 {
 
     }
 
-    public static void multiplicarMatrices(int filas1, int filas2, int columnas1, int columnas2, int[][] matriz1, int[][] matriz2, int[][] matrizResultado
-    ) {
+    public static int[][] multiplicarMatrices(int[][] matriz1, int[][] matriz2) {
 
-        if (columnas1 == filas2) {
+        int filas1 = matriz1[0].length;
+        int columnas2 = matriz2.length;
 
-            for (int i = 0; i < filas1; i++) {
+        int[][] matrizResultado = new int[filas1][columnas2];
 
-                for (int j = 0; j < columnas2; j++) {
+        if (matriz1[0].length == matriz2.length) {
 
-                    for (int h = 0; h < columnas1; h++) {
+            for (int i = 0; i < matriz1.length; i++) {
+
+                for (int j = 0; j < matriz2[i].length; j++) {
+
+                    for (int h = 0; h < matriz1[i].length; h++) {
 
                         matrizResultado[i][j] += matriz1[i][h] * matriz2[h][j];
 
@@ -123,6 +102,8 @@ public class Ejercicio11 {
             sop("Los rangos de las matrices son incorrectos. ");
 
         }
+
+        return matrizResultado;
 
     }
 
