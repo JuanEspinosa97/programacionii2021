@@ -1,5 +1,6 @@
 package ejerciciosclase.Utilidades;
 
+import ejerciciosclase.Tema03.ejercicio04.Sexo;
 import java.io.*;
 
 /**
@@ -71,6 +72,59 @@ public class Utils {
             }
         }
         return resultado;
+    }
+
+    public static double leerReal() {
+
+        InputStreamReader isr = null;
+        BufferedReader consola = null;
+
+        double resultado = 0;
+        boolean error = true;
+
+        while (error) {
+
+            try {
+
+                isr = new InputStreamReader(System.in);
+                consola = new BufferedReader(isr);
+                String comando = consola.readLine();
+                resultado = Double.parseDouble(comando);
+                error = false;
+
+            } catch (Exception e) {
+
+                System.out.println("Error.");
+
+            }
+        }
+        return resultado;
+    }
+
+    public static Sexo leerSexo() {
+
+        boolean error = true;
+        String cadena = null;
+        Sexo sexo = null;
+
+        while (error) {
+
+            try {
+
+                cadena = leerCadena();
+                sexo = Sexo.valueOf(cadena.toUpperCase());
+                error = false;
+
+            } catch (IllegalArgumentException iae) {
+
+                System.out.println("Debe introducir (FEMENINO o MASCULINO).");
+
+            }
+
+        }
+
+        return sexo;
+
     }
 
 }
