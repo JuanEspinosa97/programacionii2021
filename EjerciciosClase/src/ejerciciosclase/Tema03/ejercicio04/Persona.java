@@ -10,7 +10,7 @@ public class Persona {
 
     private String nombre;
     private int edad;
-    private String dni;
+    private Dni dni;
     private Sexo sexo;
     private double peso;
     private double altura;
@@ -19,7 +19,7 @@ public class Persona {
 
         this.nombre = "";
         this.edad = 0;
-        this.dni = "";
+        this.dni = new Dni();
         this.sexo = Sexo.FEMENINO;
         this.peso = 0;
         this.altura = 0;
@@ -30,7 +30,7 @@ public class Persona {
 
         this.nombre = nombre;
         this.edad = edad;
-        this.dni = "";
+        this.dni = new Dni();
         this.sexo = sexo;
         this.peso = 0;
         this.altura = 0;
@@ -41,14 +41,14 @@ public class Persona {
 
         this.nombre = nombre;
         this.edad = edad;
-        this.dni = "";
+        this.dni = new Dni();
         this.sexo = sexo;
         this.peso = peso;
         this.altura = altura;
 
     }
 
-    public Persona(String nombre, int edad, String dni, Sexo sexo, double peso, double altura) {
+    public Persona(String nombre, int edad, Dni dni, Sexo sexo, double peso, double altura) {
 
         this.nombre = nombre;
         this.edad = edad;
@@ -106,9 +106,9 @@ public class Persona {
      *
      * @return indice masa corporal
      */
-    public static double calcularIMC(double peso, double altura) {
+    public double calcularIMC() {   //El metodo no lo nombro static para acceder a this
 
-        return peso / pow(altura, 2);
+        return this.peso / pow(this.altura, 2);
 
     }
 
@@ -120,13 +120,13 @@ public class Persona {
      *
      * @return enumerado Peso
      */
-    public static Peso valorarPesoCorporal(double peso, double altura) {
+    public Peso valorarPesoCorporal() { //El metodo no lo nombro static para acceder a calcularIMC
 
-        if (calcularIMC(peso, altura) > 25) {
+        if (calcularIMC() > 25) {
 
             return Peso.SOBREPESO;
 
-        } else if (calcularIMC(peso, altura) < 18) {
+        } else if (calcularIMC() < 18) {
 
             return Peso.DESNUTRIDO;
 
@@ -143,9 +143,9 @@ public class Persona {
      *
      * @return true si es mayor de edad y false si no lo es
      */
-    public static boolean esMayorDeEdad(int edad) {
+    public boolean esMayorDeEdad() {
 
-        return edad >= 18;
+        return this.edad >= 18;
 
     }
 
