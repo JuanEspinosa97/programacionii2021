@@ -6,7 +6,7 @@ package practicamarvel.modelo.superheroes.noHumanos.kress;
  */
 public class CapitanaMarvel extends Kress {
 
-    public CapitanaMarvel(int identificador, String alias, String identidad, int movimientos, String poderes, double coste, double recompensa) {
+    public CapitanaMarvel() {
         super(identificador, alias, identidad, movimientos, poderes, coste, recompensa);
     }
 

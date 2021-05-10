@@ -6,7 +6,7 @@ package practicamarvel.modelo.superheroes.humanos.humanosMutados;
  */
 public class Spiderman extends HumanoMutado {
 
-    public Spiderman(int identificador, String alias, String identidad, int movimientos, String poderes, double coste, double recompensa) {
+    public Spiderman() {
         super(identificador, alias, identidad, movimientos, poderes, coste, recompensa);
     }
 

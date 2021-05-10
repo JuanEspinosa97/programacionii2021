@@ -6,7 +6,7 @@ package practicamarvel.modelo.superheroes.homosSuperior;
  */
 public class Lobezno extends HomoSuperior {
 
-    public Lobezno(int identificador, String alias, String identidad, int movimientos, String poderes, double coste, double recompensa) {
+    public Lobezno() {
         super(identificador, alias, identidad, movimientos, poderes, coste, recompensa);
     }
 

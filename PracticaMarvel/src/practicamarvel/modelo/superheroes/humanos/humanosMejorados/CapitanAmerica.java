@@ -6,7 +6,7 @@ package practicamarvel.modelo.superheroes.humanos.humanosMejorados;
  */
 public class CapitanAmerica extends HumanoMejorado {
 
-    public CapitanAmerica(int identificador, String alias, String identidad, int movimientos, String poderes, double coste, double recompensa) {
+    public CapitanAmerica() {
         super(identificador, alias, identidad, movimientos, poderes, coste, recompensa);
     }
 

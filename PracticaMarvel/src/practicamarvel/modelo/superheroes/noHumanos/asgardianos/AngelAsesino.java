@@ -6,7 +6,7 @@ package practicamarvel.modelo.superheroes.noHumanos.asgardianos;
  */
 public class AngelAsesino extends Asgardiano {
 
-    public AngelAsesino(int identificador, String alias, String identidad, int movimientos, String poderes, double coste, double recompensa) {
+    public AngelAsesino() {
         super(identificador, alias, identidad, movimientos, poderes, coste, recompensa);
     }
 

@@ -8,8 +8,8 @@ import practicamarvel.modelo.superheroes.Superheroe;
  */
 public class Humano extends Superheroe {
 
-    public Humano(int identificador, String alias, String identidad, int movimientos, String poderes, double coste, double recompensa) {
-        super(identificador, alias, identidad, movimientos, poderes, coste, recompensa);
+    public Humano(String alias, String identidad) {
+        super(alias, identidad);
     }
 
 }

@@ -6,7 +6,7 @@ package practicamarvel.modelo.superheroes.homosSuperior;
  */
 public class Magneto extends HomoSuperior {
 
-    public Magneto(int identificador, String alias, String identidad, int movimientos, String poderes, double coste, double recompensa) {
+    public Magneto() {
         super(identificador, alias, identidad, movimientos, poderes, coste, recompensa);
     }
 

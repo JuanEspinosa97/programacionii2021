@@ -6,7 +6,7 @@ package practicamarvel.modelo.superheroes.humanos.humanosMutados;
  */
 public class Hulk extends HumanoMutado {
 
-    public Hulk(int identificador, String alias, String identidad, int movimientos, String poderes, double coste, double recompensa) {
+    public Hulk() {
         super(identificador, alias, identidad, movimientos, poderes, coste, recompensa);
     }
 

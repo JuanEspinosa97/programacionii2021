@@ -6,7 +6,7 @@ package practicamarvel.modelo.superheroes.noHumanos.asgardianos;
  */
 public class Thor extends Asgardiano {
 
-    public Thor(int identificador, String alias, String identidad, int movimientos, String poderes, double coste, double recompensa) {
+    public Thor() {
         super(identificador, alias, identidad, movimientos, poderes, coste, recompensa);
     }
 

@@ -6,7 +6,7 @@ package practicamarvel.modelo.superheroes.homosSuperior;
  */
 public class Tormenta extends HomoSuperior {
 
-    public Tormenta(int identificador, String alias, String identidad, int movimientos, String poderes, double coste, double recompensa) {
+    public Tormenta() {
         super(identificador, alias, identidad, movimientos, poderes, coste, recompensa);
     }
 

@@ -6,7 +6,7 @@ package practicamarvel.modelo.superheroes.humanos.humanosMejorados;
  */
 public class ViudaNegra extends HumanoMejorado {
 
-    public ViudaNegra(int identificador, String alias, String identidad, int movimientos, String poderes, double coste, double recompensa) {
+    public ViudaNegra() {
         super(identificador, alias, identidad, movimientos, poderes, coste, recompensa);
     }
 

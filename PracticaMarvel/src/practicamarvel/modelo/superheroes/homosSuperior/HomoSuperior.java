@@ -8,8 +8,8 @@ import practicamarvel.modelo.superheroes.Superheroe;
  */
 public class HomoSuperior extends Superheroe {
 
-    public HomoSuperior(int identificador, String alias, String identidad, int movimientos, String poderes, double coste, double recompensa) {
-        super(identificador, alias, identidad, movimientos, poderes, coste, recompensa);
+    public HomoSuperior(String alias, String identidad) {
+        super(alias, identidad);
     }
 
 }

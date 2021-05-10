@@ -6,24 +6,18 @@ package practicamarvel.modelo.superheroes;
  */
 public class Superheroe {
 
-    private int identificador;
+    //private int identificador;
     private String alias;
     private String identidad;
-    private int movimientos;
-    private String poderes;
-    private double coste;
-    private double recompensa;
+    //private int movimientos;
+    //private ParrillaDePoderes poderes;
+    //private double coste;
+    //private double recompensa;
 
-    public Superheroe(int identificador, String alias, String identidad, int movimientos,
-            String poderes, double coste, double recompensa) {
+    public Superheroe(String alias, String identidad) {
 
-        this.identificador = identificador;
         this.alias = alias;
         this.identidad = identidad;
-        this.movimientos = movimientos;
-        this.poderes = poderes;
-        this.coste = coste;
-        this.recompensa = recompensa;
 
     }
 
