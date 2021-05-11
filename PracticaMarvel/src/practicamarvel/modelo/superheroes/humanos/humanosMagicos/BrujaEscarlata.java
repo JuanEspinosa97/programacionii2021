@@ -1,6 +1,6 @@
 package practicamarvel.modelo.superheroes.humanos.humanosMagicos;
 
-import practicamarvel.modelo.superheroes.ParrillaDePoderes;
+import practicamarvel.modelo.poderes.ParrillaDePoder;
 
 /**
  *
@@ -12,13 +12,13 @@ public class BrujaEscarlata extends HumanoMagico {
     public static final String IDENTIDAD = "Wanda Maximoff";
     private String origen;
     private String afiliacion;
-    private ParrillaDePoderes poderes;
+    private ParrillaDePoder poderes;
 
     public BrujaEscarlata() {
         super(ALIAS, IDENTIDAD);
         this.origen = "Humano Magico";
         this.afiliacion = "Strange Academy";
-        this.poderes = new ParrillaDePoderes(3, 2, 2, 2, 6, 3);
+        this.poderes = new ParrillaDePoder(3, 2, 2, 2, 6, 3);
 
     }
 

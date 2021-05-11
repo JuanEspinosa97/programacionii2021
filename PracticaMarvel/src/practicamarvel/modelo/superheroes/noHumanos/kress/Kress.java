@@ -8,8 +8,8 @@ import practicamarvel.modelo.superheroes.noHumanos.NoHumano;
  */
 public class Kress extends NoHumano {
 
-    public Kress(int identificador, String alias, String identidad, int movimientos, String poderes, double coste, double recompensa) {
-        super(identificador, alias, identidad, movimientos, poderes, coste, recompensa);
+    public Kress(String alias, String identidad) {
+        super(alias, identidad);
     }
 
 }

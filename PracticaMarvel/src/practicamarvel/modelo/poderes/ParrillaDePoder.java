@@ -1,10 +1,10 @@
-package practicamarvel.modelo.superheroes;
+package practicamarvel.modelo.poderes;
 
 /**
  *
  * @author Juan Espinosa Rodriguez <j.espinosa9@usp.ceu.es>
  */
-public class ParrillaDePoderes {
+public class ParrillaDePoder {
 
     private int inteligencia;
     private int fuerza;
@@ -13,8 +13,7 @@ public class ParrillaDePoderes {
     private int energia;
     private int habilidad;
 
-    public ParrillaDePoderes(int inteligencia, int fuerza, int velocidad, int resistencia,
-            int energia, int habilidad) {
+    public ParrillaDePoder(int inteligencia, int fuerza, int velocidad, int resistencia, int energia, int habilidad) {
 
         this.inteligencia = inteligencia;
         this.fuerza = fuerza;

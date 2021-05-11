@@ -8,8 +8,8 @@ import practicamarvel.modelo.superheroes.noHumanos.NoHumano;
  */
 public class Asgardiano extends NoHumano {
 
-    public Asgardiano(int identificador, String alias, String identidad, int movimientos, String poderes, double coste, double recompensa) {
-        super(identificador, alias, identidad, movimientos, poderes, coste, recompensa);
+    public Asgardiano(String alias, String identidad) {
+        super(alias, identidad);
     }
 
 }
