@@ -15,7 +15,6 @@ public class ChicaMarvel extends HomoSuperior {
     private Organizacion afiliacion;
     private ParrillaDePoder poderes;
 
-    //Identificador?
     public ChicaMarvel() {
         super(ALIAS, IDENTIDAD);
         this.origen = "Homo Superior";

@@ -22,4 +22,20 @@ public class Escenario {
 
     }
 
+    public int getMonedasIniciales() {
+        return monedasIniciales;
+    }
+
+    public int getIntegrantes() {
+        return integrantes;
+    }
+
+    public int getMovimientos() {
+        return movimientos;
+    }
+
+    public int getEnergia() {
+        return energia;
+    }
+
 }
