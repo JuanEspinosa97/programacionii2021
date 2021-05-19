@@ -1,6 +1,7 @@
 package practicamarvel.modelo.superheroes.noHumanos.asgardianos;
 
-import practicamarvel.modelo.poderes.ParrillaDePoder;
+import practicamarvel.modelo.organizaciones.Organizacion;
+import practicamarvel.modelo.superheroes.ParrillaDePoder;
 
 /**
  *
@@ -10,15 +11,13 @@ public class AngelAsesino extends Asgardiano {
 
     public static final String ALIAS = "Angel Asesino";
     public static final String IDENTIDAD = "Aldrif Odinsdottir";
-    private String origen;
-    private String afiliacion;
+
     private ParrillaDePoder poderes;
 
     public AngelAsesino() {
-        super(ALIAS, IDENTIDAD);
-        this.origen = "Asgardiano";
-        this.afiliacion = "Liga de los Reinos";
+        super(ALIAS, IDENTIDAD, Organizacion.LIGA_DE_LOS_REINOS);
         this.poderes = new ParrillaDePoder(2, 7, 3, 3, 1, 6);
+
     }
 
 }

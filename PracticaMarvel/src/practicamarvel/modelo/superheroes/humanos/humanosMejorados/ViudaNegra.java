@@ -1,6 +1,7 @@
 package practicamarvel.modelo.superheroes.humanos.humanosMejorados;
 
-import practicamarvel.modelo.poderes.ParrillaDePoder;
+import practicamarvel.modelo.organizaciones.Organizacion;
+import practicamarvel.modelo.superheroes.ParrillaDePoder;
 
 /**
  *
@@ -10,15 +11,13 @@ public class ViudaNegra extends HumanoMejorado {
 
     public static final String ALIAS = "Viuda Negra";
     public static final String IDENTIDAD = "Natalia Romanov";
-    private String origen;
-    private String afiliacion;
+
     private ParrillaDePoder poderes;
 
     public ViudaNegra() {
-        super(ALIAS, IDENTIDAD);
-        this.origen = "Humano Mejorado";
-        this.afiliacion = "Vengadores";
+        super(ALIAS, IDENTIDAD, Organizacion.VENGADORES);
         this.poderes = new ParrillaDePoder(3, 3, 2, 3, 3, 5);
+
     }
 
 }

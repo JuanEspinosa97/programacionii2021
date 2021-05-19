@@ -1,6 +1,7 @@
 package practicamarvel.modelo.superheroes.noHumanos.kress;
 
-import practicamarvel.modelo.poderes.ParrillaDePoder;
+import practicamarvel.modelo.organizaciones.Organizacion;
+import practicamarvel.modelo.superheroes.ParrillaDePoder;
 
 /**
  *
@@ -10,15 +11,23 @@ public class CapitanaMarvel extends Kress {
 
     public static final String ALIAS = "Capitana Marvel";
     public static final String IDENTIDAD = "Carol Danvers";
-    private String origen;
-    private String afiliacion;
+
     private ParrillaDePoder poderes;
 
     public CapitanaMarvel() {
-        super(ALIAS, IDENTIDAD);
-        this.origen = "Kree";
-        this.afiliacion = "A-Force";
+        super(ALIAS, IDENTIDAD, Organizacion.A_FORCE);
         this.poderes = new ParrillaDePoder(4, 5, 5, 6, 5, 4);
+
+    }
+
+    @Override
+    public String toString() {
+
+        return "Alias: " + ALIAS
+                + "\nIdentidad: " + IDENTIDAD
+                + "\nOrganizacion: " + Organizacion.A_FORCE
+                + "\nParrilla de poderes: " + poderes;
+
     }
 
 }

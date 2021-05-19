@@ -1,6 +1,7 @@
 package practicamarvel.modelo.superheroes.humanos.humanosMejorados;
 
-import practicamarvel.modelo.poderes.ParrillaDePoder;
+import practicamarvel.modelo.organizaciones.Organizacion;
+import practicamarvel.modelo.superheroes.ParrillaDePoder;
 
 /**
  *
@@ -10,15 +11,13 @@ public class Deadpool extends HumanoMejorado {
 
     public static final String ALIAS = "Deadpool";
     public static final String IDENTIDAD = "Wade Wilson";
-    private String origen;
-    private String afiliacion;
+
     private ParrillaDePoder poderes;
 
     public Deadpool() {
-        super(ALIAS, IDENTIDAD);
-        this.origen = "Humano Mejorado";
-        this.afiliacion = "Mercenarios";
+        super(ALIAS, IDENTIDAD, Organizacion.MERCENARIOS);
         this.poderes = new ParrillaDePoder(3, 4, 2, 4, 1, 5);
+
     }
 
 }

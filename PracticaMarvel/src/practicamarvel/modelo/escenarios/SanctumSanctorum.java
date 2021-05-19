@@ -18,4 +18,16 @@ public class SanctumSanctorum extends Escenario {
 
     }
 
+    /*
+    @Override
+    public String toString() {
+
+        return "Nombre: " + NOMBRE
+                + "\nMonedas: " + MONEDAS
+                + "\nMiembros: " + MIEMBROS
+                + "\nMovimientos: " + MOVIMIENTOS
+                + "\nEnergia: " + ENERGIA;
+
+    }
+     */
 }

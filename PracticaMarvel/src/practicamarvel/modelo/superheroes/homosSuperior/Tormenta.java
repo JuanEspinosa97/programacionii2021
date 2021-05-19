@@ -1,6 +1,7 @@
 package practicamarvel.modelo.superheroes.homosSuperior;
 
-import practicamarvel.modelo.poderes.ParrillaDePoder;
+import practicamarvel.modelo.organizaciones.Organizacion;
+import practicamarvel.modelo.superheroes.ParrillaDePoder;
 
 /**
  *
@@ -10,14 +11,11 @@ public class Tormenta extends HomoSuperior {
 
     public static final String ALIAS = "Tormenta";
     public static final String IDENTIDAD = "Ororo Munroe";
-    private String origen;
-    private String afiliacion;
+
     private ParrillaDePoder poderes;
 
     public Tormenta() {
-        super(ALIAS, IDENTIDAD);
-        this.origen = "Homo Superior";
-        this.afiliacion = "X-Men";
+        super(ALIAS, IDENTIDAD, Organizacion.X_MEN);
         this.poderes = new ParrillaDePoder(3, 2, 3, 2, 5, 4);
 
     }

@@ -4,7 +4,7 @@ package practicamarvel.modelo.escenarios;
  *
  * @author Juan Espinosa Rodriguez <j.espinosa9@usp.ceu.es>
  */
-public class Escenario {
+public abstract class Escenario {
 
     private String titulo;
     private int monedasIniciales;

@@ -1,6 +1,7 @@
 package practicamarvel.modelo.superheroes.humanos.humanosMutados;
 
-import practicamarvel.modelo.poderes.ParrillaDePoder;
+import practicamarvel.modelo.organizaciones.Organizacion;
+import practicamarvel.modelo.superheroes.ParrillaDePoder;
 
 /**
  *
@@ -10,15 +11,13 @@ public class Hulk extends HumanoMutado {
 
     public static final String ALIAS = "Hulk";
     public static final String IDENTIDAD = "Bruce Banner";
-    private String origen;
-    private String afiliacion;
+
     private ParrillaDePoder poderes;
 
     public Hulk() {
-        super(ALIAS, IDENTIDAD);
-        this.origen = "Humano Mutado";
-        this.afiliacion = "Vengadores";
+        super(ALIAS, IDENTIDAD, Organizacion.VENGADORES);
         this.poderes = new ParrillaDePoder(3, 7, 3, 5, 1, 4);
+
     }
 
 }

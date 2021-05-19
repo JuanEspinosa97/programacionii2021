@@ -1,6 +1,7 @@
 package practicamarvel.modelo.superheroes.humanos.humanosMejorados;
 
-import practicamarvel.modelo.poderes.ParrillaDePoder;
+import practicamarvel.modelo.organizaciones.Organizacion;
+import practicamarvel.modelo.superheroes.ParrillaDePoder;
 
 /**
  *
@@ -10,14 +11,11 @@ public class IronMan extends HumanoMejorado {
 
     public static final String ALIAS = "Iron Man";
     public static final String IDENTIDAD = "Anthony Stark";
-    private String origen;
-    private String afiliacion;
+
     private ParrillaDePoder poderes;
 
     public IronMan() {
-        super(ALIAS, IDENTIDAD);
-        this.origen = "Humano Mejorado";
-        this.afiliacion = "Vengadores";
+        super(ALIAS, IDENTIDAD, Organizacion.VENGADORES);
         this.poderes = new ParrillaDePoder(6, 6, 5, 5, 6, 5);
 
     }
