@@ -1,6 +1,7 @@
 package practicamarvel.modelo.organizaciones;
 
 /**
+ * Son agrupaciones de superheroes.
  *
  * @author Juan Espinosa Rodriguez <j.espinosa9@usp.ceu.es>
  */

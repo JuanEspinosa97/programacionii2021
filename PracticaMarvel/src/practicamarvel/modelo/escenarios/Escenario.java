@@ -1,6 +1,10 @@
 package practicamarvel.modelo.escenarios;
 
 /**
+ * Se corresponden con localizaciones famosas del universo Marvel. Establece
+ * para cada jugador, un numero de monedas iniciales, restringiendo el numero de
+ * miembros del equipo. Tambien restringira el numero de movimientos que cada
+ * superheroe pueda hacer en su lucha.
  *
  * @author Juan Espinosa Rodriguez <j.espinosa9@usp.ceu.es>
  */

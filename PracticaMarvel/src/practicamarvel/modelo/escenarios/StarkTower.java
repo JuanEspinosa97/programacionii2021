@@ -1,6 +1,7 @@
 package practicamarvel.modelo.escenarios;
 
 /**
+ * Diseñada por Tony Stark.
  *
  * @author Juan Espinosa Rodriguez <j.espinosa9@usp.ceu.es>
  */

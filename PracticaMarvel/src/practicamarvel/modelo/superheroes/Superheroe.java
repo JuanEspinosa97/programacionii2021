@@ -9,6 +9,10 @@ import practicamarvel.modelo.movimientos.Movimiento;
 import practicamarvel.modelo.organizaciones.Organizacion;
 
 /**
+ * El superheroe cuenta con una energia vital y un conjunto de movimientos.
+ * Ademas posee un conjunto de caracteristicas (Power grid). Permiten modular
+ * movimientos de ataque y defensa. Pueden ser mejoradas por el jugador al
+ * inicio de la partida.
  *
  * @author Juan Espinosa Rodriguez <j.espinosa9@usp.ceu.es>
  */
@@ -18,6 +22,7 @@ public abstract class Superheroe extends Identificador {    //la defino como abs
     private final String identidad;
     private final Organizacion organizacion;
 
+    /* Cada superheroe posee un conjunto de movimientos. Los superheroes realizan movimientos. */
     private final List<Movimiento> movimientos;
 
     private final PoderesMinMax poderes;

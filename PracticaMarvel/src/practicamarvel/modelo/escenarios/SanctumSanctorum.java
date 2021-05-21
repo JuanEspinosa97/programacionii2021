@@ -1,6 +1,7 @@
 package practicamarvel.modelo.escenarios;
 
 /**
+ * Mansion del doctor Strange.
  *
  * @author Juan Espinosa Rodriguez <j.espinosa9@usp.ceu.es>
  */

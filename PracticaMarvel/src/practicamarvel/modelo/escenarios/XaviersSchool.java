@@ -1,6 +1,7 @@
 package practicamarvel.modelo.escenarios;
 
 /**
+ * Escuela de mutantes creada por el profesor Xaviers.
  *
  * @author Juan Espinosa Rodriguez <j.espinosa9@usp.ceu.es>
  */
