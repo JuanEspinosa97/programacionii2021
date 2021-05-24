@@ -17,6 +17,7 @@ public class ChicaMarvel extends HomoSuperior {
     public ChicaMarvel() {
         super(ALIAS, IDENTIDAD, Organizacion.X_MEN);
         this.poderes = new ParrillaDePoder(3, 2, 3, 2, 6, 4);
+        this.getPoder().setInteligencia(3);
     }
 
     @Override

@@ -8,10 +8,11 @@ import java.io.ObjectOutputStream;
 import practicamarvel.almacen.AlmacenDatos;
 
 /**
+ * Entrada/salida de mi app
  *
  * @author Juan Espinosa Rodriguez <j.espinosa9@usp.ceu.es>
  */
-public class IO {
+public class IO {   //sacado de RacionalIO
 
     public static final String FICHERO = "practicaMarvel.dat";
 

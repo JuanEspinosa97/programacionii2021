@@ -37,7 +37,7 @@ public abstract class Superheroe extends Identificador {    //la defino como abs
 
     private Escenario escenario;
 
-    private Jugador jugador;
+    private Jugador jugador;    //para acceder al escenario y asi obtener su coste y recompensa
 
     /**
      * Constructor de superheroe. El superheroe tiene un alias, una identidad
@@ -68,6 +68,7 @@ public abstract class Superheroe extends Identificador {    //la defino como abs
      */
     public String getAlias() {
         return alias;
+
     }
 
     // No hago getter de identidad secreta puesto que, como su nombre indica, es secreta y no debe facilitarse.
@@ -99,8 +100,14 @@ public abstract class Superheroe extends Identificador {    //la defino como abs
      * @return coste
      */
     public int getCoste() {
-        return coste = (escenario.getMonedasIniciales() / escenario.getIntegrantes()) * (poder.calcularSumaPoderes() / 30);
-        //falta hacer el descuento
+        int coste = (jugador.getPartida().getEscenario().getMonedasIniciales() / jugador.getPartida().getEscenario().getIntegrantes()) * (poder.calcularSumaPoderes() / 30);
+        if (jugador.getOrganizacion().equals(this.organizacion)) {
+
+            coste = (int) (coste * 0.8); // sería equivalente a multiplicar por 0.2 y restarselo al inicial
+
+        }
+
+        return coste;
     }
 
     /**
@@ -120,7 +127,7 @@ public abstract class Superheroe extends Identificador {    //la defino como abs
      * @return energiaVital
      */
     public int getEnergiaVital() {
-        return energiaVital = escenario.getEnergia() * poder.getResistencia();
+        return energiaVital;
     }
 
     /**
@@ -129,7 +136,20 @@ public abstract class Superheroe extends Identificador {    //la defino como abs
      * @return energiaLucha
      */
     public int getEnergiaLucha() {
-        return energiaLucha = escenario.getMovimientos() * 150;
+        return energiaLucha;
+    }
+
+    /**
+     * Las clases hijas acceden a este get para determinar sus poderes
+     *
+     * @return
+     */
+    public ParrillaDePoder getPoder() {
+        return poder;
+    }
+
+    public PoderesMinMax getPoderes() {
+        return poderes;
     }
 
     /**
@@ -150,8 +170,20 @@ public abstract class Superheroe extends Identificador {    //la defino como abs
         this.energiaLucha = energiaLucha;
     }
 
+    /**
+     * Cada superheroe tiene una energia en concreto. La energia vital depende
+     * del escenario y se contabiliza como su energia por el valor de la
+     * resistencia de la parrilla de poderes. La energia de la lucha se
+     * contabiliza como el numero de movimientos permitidos por el escenario por
+     * 150.
+     *
+     * @param jugador
+     */
     public void setJugador(Jugador jugador) {
         this.jugador = jugador;
+        this.setEnergiaVital(jugador.getPartida().getEscenario().getEnergia() * this.getPoder().getResistencia());
+        this.setEnergiaLucha(jugador.getPartida().getEscenario().getMovimientos() * 150);
+
     }
 
     /*

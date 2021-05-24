@@ -39,4 +39,100 @@ public class PoderesMinMax {
 
     }
 
+    public int getInteligenciaMin() {
+        return inteligenciaMin;
+    }
+
+    public int getInteligenciaMax() {
+        return inteligenciaMax;
+    }
+
+    public int getFuerzaMin() {
+        return fuerzaMin;
+    }
+
+    public int getFuerzaMax() {
+        return fuerzaMax;
+    }
+
+    public int getVelocidadMin() {
+        return velocidadMin;
+    }
+
+    public int getVelocidadMax() {
+        return velocidadMax;
+    }
+
+    public int getResistenciaMin() {
+        return resistenciaMin;
+    }
+
+    public int getResistenciaMax() {
+        return resistenciaMax;
+    }
+
+    public int getEnergiaMin() {
+        return energiaMin;
+    }
+
+    public int getEnergiaMax() {
+        return energiaMax;
+    }
+
+    public int getHabilidadMin() {
+        return habilidadMin;
+    }
+
+    public int getHabilidadMax() {
+        return habilidadMax;
+    }
+
+    public void setInteligenciaMin(int inteligenciaMin) {
+        this.inteligenciaMin = inteligenciaMin;
+    }
+
+    public void setInteligenciaMax(int inteligenciaMax) {
+        this.inteligenciaMax = inteligenciaMax;
+    }
+
+    public void setFuerzaMin(int fuerzaMin) {
+        this.fuerzaMin = fuerzaMin;
+    }
+
+    public void setFuerzaMax(int fuerzaMax) {
+        this.fuerzaMax = fuerzaMax;
+    }
+
+    public void setVelocidadMin(int velocidadMin) {
+        this.velocidadMin = velocidadMin;
+    }
+
+    public void setVelocidadMax(int velocidadMax) {
+        this.velocidadMax = velocidadMax;
+    }
+
+    public void setResistenciaMin(int resistenciaMin) {
+        this.resistenciaMin = resistenciaMin;
+    }
+
+    public void setResistenciaMax(int resistenciaMax) {
+        this.resistenciaMax = resistenciaMax;
+    }
+
+    public void setEnergiaMin(int energiaMin) {
+        this.energiaMin = energiaMin;
+    }
+
+    public void setEnergiaMax(int energiaMax) {
+        this.energiaMax = energiaMax;
+    }
+
+    public void setHabilidadMin(int habilidadMin) {
+        this.habilidadMin = habilidadMin;
+    }
+
+    public void setHabilidadMax(int habilidadMax) {
+        this.habilidadMax = habilidadMax;
+    }
+
 }

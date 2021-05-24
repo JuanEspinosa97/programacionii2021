@@ -2,6 +2,8 @@ package practicamarvel.modelo.jugadores;
 
 import java.util.ArrayList;
 import java.util.List;
+import practicamarvel.modelo.excepciones.EquipoCompletoException;
+import practicamarvel.modelo.excepciones.SuperheroeNoEncontradoException;
 import practicamarvel.modelo.movimientos.Movimiento;
 import practicamarvel.modelo.organizaciones.Organizacion;
 import practicamarvel.modelo.partidas.Partida;
@@ -26,7 +28,7 @@ public class Jugador {
     /* Cada jugador deberá configurar tantos movimientos como establezca el escenario*/
     private List<Movimiento> movimientos;
 
-    private final int monedas;
+    private int monedas;
 
     private Partida partida;
 
@@ -59,4 +61,52 @@ public class Jugador {
         return partida;
     }
 
+    /**
+     * Para comprar un superheroe comprobamos antes que tenemos dinero
+     * suficiente y que cabe en nuestro equipo. A continuacion restamos a
+     * nuestro presupuesto lo que nos ha costado el superheroe.
+     *
+     * @param superheroe
+     * @throws EquipoCompletoException
+     */
+    public void comprarSuperheroe(Superheroe superheroe) throws EquipoCompletoException {
+
+        if (this.monedas >= superheroe.getCoste()) {
+
+            if (this.superheroes.size() < this.partida.getEscenario().getIntegrantes()) {
+
+                this.monedas = this.monedas - superheroe.getCoste();
+                this.superheroes.add(superheroe);
+
+            } else {
+
+                throw new EquipoCompletoException();
+
+            }
+
+        }
+
+    }
+
+    /**
+     *
+     *
+     * @param superheroe
+     * @param movimiento
+     * @throws SuperheroeNoEncontradoException
+     */
+    public void comprarMovimiento(Superheroe superheroe, Movimiento movimiento) throws SuperheroeNoEncontradoException {
+
+        if (this.superheroes.contains(superheroe)) {
+
+            //añadirmovimiento de superheroe
+        } else {
+
+            throw new SuperheroeNoEncontradoException();
+
+        }
+
+    }
+
+    /*Comprar una mejora.*/
 }

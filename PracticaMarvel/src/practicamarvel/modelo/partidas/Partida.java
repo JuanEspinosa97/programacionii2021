@@ -19,4 +19,8 @@ public class Partida extends Identificador {
 
     private Escenario escenario;
 
+    public Escenario getEscenario() {
+        return escenario;
+    }
+
 }
