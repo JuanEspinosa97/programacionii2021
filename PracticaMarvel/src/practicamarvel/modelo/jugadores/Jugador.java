@@ -2,7 +2,9 @@ package practicamarvel.modelo.jugadores;
 
 import java.util.ArrayList;
 import java.util.List;
+import practicamarvel.modelo.excepciones.EnergiaInsuficienteException;
 import practicamarvel.modelo.excepciones.EquipoCompletoException;
+import practicamarvel.modelo.excepciones.MovimientosExcedidosException;
 import practicamarvel.modelo.excepciones.SuperheroeNoEncontradoException;
 import practicamarvel.modelo.movimientos.Movimiento;
 import practicamarvel.modelo.organizaciones.Organizacion;
@@ -61,6 +63,10 @@ public class Jugador {
         return partida;
     }
 
+    public List<Movimiento> getMovimientos() {
+        return movimientos;
+    }
+
     /**
      * Para comprar un superheroe comprobamos antes que tenemos dinero
      * suficiente y que cabe en nuestro equipo. A continuacion restamos a
@@ -89,17 +95,21 @@ public class Jugador {
     }
 
     /**
-     *
+     * Para comprar un movimiento antes debemos asegurarnos de que dicho
+     * superheroe se encuentra en la lista.
      *
      * @param superheroe
      * @param movimiento
      * @throws SuperheroeNoEncontradoException
+     * @throws EnergiaInsuficienteException
+     * @throws MovimientosExcedidosException
      */
-    public void comprarMovimiento(Superheroe superheroe, Movimiento movimiento) throws SuperheroeNoEncontradoException {
+    public void comprarMovimiento(Superheroe superheroe, Movimiento movimiento) throws SuperheroeNoEncontradoException, EnergiaInsuficienteException, MovimientosExcedidosException {
 
         if (this.superheroes.contains(superheroe)) {
 
-            //añadirmovimiento de superheroe
+            superheroe.aniadirMovimiento(movimiento);
+
         } else {
 
             throw new SuperheroeNoEncontradoException();
@@ -108,5 +118,14 @@ public class Jugador {
 
     }
 
-    /*Comprar una mejora.*/
+    /**
+     * Eliminar un superheroe de la lista.
+     *
+     * @param superheroe
+     */
+    public void eliminarSuperheroe(Superheroe superheroe) {
+
+        this.superheroes.remove(superheroe);
+
+    }
 }

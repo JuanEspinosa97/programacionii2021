@@ -1,7 +1,6 @@
 package practicamarvel.modelo.superheroes.noHumanos.kress;
 
 import practicamarvel.modelo.organizaciones.Organizacion;
-import practicamarvel.modelo.superheroes.ParrillaDePoder;
 import practicamarvel.modelo.superheroes.noHumanos.NoHumano;
 
 /**
@@ -10,12 +9,12 @@ import practicamarvel.modelo.superheroes.noHumanos.NoHumano;
  */
 public abstract class Kress extends NoHumano {
 
-    private ParrillaDePoder poder;
-
     public Kress(String alias, String identidad, Organizacion organizacion) {
         super(alias, identidad, organizacion);
-        this.poder.setInteligencia(4);
-        this.poder.setFuerza(5);
+        this.getPoderes().setInteligenciaMax(4);
+        this.getPoderes().setInteligenciaMin(4);
+        this.getPoderes().setFuerzaMax(5);
+        this.getPoderes().setFuerzaMin(5);
     }
 
 }

@@ -2,7 +2,8 @@ package practicamarvel.modelo.superheroes;
 
 import java.util.ArrayList;
 import java.util.List;
-import practicamarvel.modelo.escenarios.Escenario;
+import practicamarvel.modelo.excepciones.EnergiaInsuficienteException;
+import practicamarvel.modelo.excepciones.MovimientosExcedidosException;
 import practicamarvel.modelo.identificadores.Identificador;
 import practicamarvel.modelo.jugadores.Jugador;
 import practicamarvel.modelo.movimientos.Movimiento;
@@ -29,13 +30,8 @@ public abstract class Superheroe extends Identificador {    //la defino como abs
 
     private ParrillaDePoder poder;
 
-    private int coste;
-    private int recompensa;
-
     private int energiaVital;
     private int energiaLucha;
-
-    private Escenario escenario;
 
     private Jugador jugador;    //para acceder al escenario y asi obtener su coste y recompensa
 
@@ -118,7 +114,22 @@ public abstract class Superheroe extends Identificador {    //la defino como abs
      * @return recompensa
      */
     public int getRecompensa() {
-        return recompensa = this.getCoste() * (poder.calcularMediaPoderes() / 7);
+        int recompensa = this.getCoste() * (poder.calcularMediaPoderes() / 7);
+        return recompensa;
+    }
+
+    /**
+     * El coste por la mejora de un punto en cualquiera de las caracteristicas
+     * de la parrilla depende de las monedas iniciales que proporciona el
+     * escenario en el que participa el superheroe y el numero de superheroes
+     * que establezca el mismo.
+     *
+     * @return mejora de un punto
+     */
+    public int getCosteMejora() {
+
+        return (jugador.getPartida().getEscenario().getMonedasIniciales() / (jugador.getPartida().getEscenario().getIntegrantes() * 15));
+
     }
 
     /**
@@ -183,6 +194,39 @@ public abstract class Superheroe extends Identificador {    //la defino como abs
         this.jugador = jugador;
         this.setEnergiaVital(jugador.getPartida().getEscenario().getEnergia() * this.getPoder().getResistencia());
         this.setEnergiaLucha(jugador.getPartida().getEscenario().getMovimientos() * 150);
+
+    }
+
+    /**
+     * Para aniadir un movimiento para un superheroe no debe superar la lista de
+     * movimientos que hemos establecido y comprobamos que queda suficiente
+     * energia de lucha puesto que, como dice el enunciado, "cada vez que un
+     * superheroe ejecute un movimiento (ataque o defensa) disminuye su energia
+     * de lucha".
+     *
+     * @param movimiento
+     * @throws EnergiaInsuficienteException
+     * @throws MovimientosExcedidosException
+     */
+    public void aniadirMovimiento(Movimiento movimiento) throws EnergiaInsuficienteException, MovimientosExcedidosException {
+
+        if (this.movimientos.size() < this.jugador.getPartida().getEscenario().getMovimientos()) {
+
+            if (movimiento.getEnergia() <= this.energiaLucha) {
+
+                this.movimientos.add(movimiento);
+
+            } else {
+
+                throw new EnergiaInsuficienteException();
+
+            }
+
+        } else {
+
+            throw new MovimientosExcedidosException();
+
+        }
 
     }
 

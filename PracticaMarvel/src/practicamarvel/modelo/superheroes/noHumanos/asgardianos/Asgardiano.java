@@ -11,8 +11,10 @@ public abstract class Asgardiano extends NoHumano {
 
     public Asgardiano(String alias, String identidad, Organizacion organizacion) {
         super(alias, identidad, organizacion);
-        this.getPoderes().setInteligenciaMax(0);
-        this.getPoder().setFuerza(7);
+        this.getPoderes().setInteligenciaMax(2);
+        this.getPoderes().setInteligenciaMin(2);
+        this.getPoderes().setFuerzaMax(7);
+        this.getPoderes().setFuerzaMin(7);
     }
 
 }

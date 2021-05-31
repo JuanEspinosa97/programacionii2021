@@ -28,6 +28,26 @@ public class ParrillaDePoder {
         return resistencia;
     }
 
+    public int getInteligencia() {
+        return inteligencia;
+    }
+
+    public int getFuerza() {
+        return fuerza;
+    }
+
+    public int getVelocidad() {
+        return velocidad;
+    }
+
+    public int getEnergia() {
+        return energia;
+    }
+
+    public int getHabilidad() {
+        return habilidad;
+    }
+
     public void setHabilidad(int habilidad) {
         this.habilidad = habilidad;
     }
@@ -42,6 +62,14 @@ public class ParrillaDePoder {
 
     public void setFuerza(int fuerza) {
         this.fuerza = fuerza;
+    }
+
+    public void setVelocidad(int velocidad) {
+        this.velocidad = velocidad;
+    }
+
+    public void setResistencia(int resistencia) {
+        this.resistencia = resistencia;
     }
 
     public int calcularSumaPoderes() {

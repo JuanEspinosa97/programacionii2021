@@ -1,7 +1,6 @@
 package practicamarvel.modelo.superheroes.homosSuperior;
 
 import practicamarvel.modelo.organizaciones.Organizacion;
-import practicamarvel.modelo.superheroes.ParrillaDePoder;
 
 /**
  *
@@ -12,11 +11,16 @@ public class Domino extends HomoSuperior {
     public static final String ALIAS = "Domino";
     public static final String IDENTIDAD = "Neena Thurman";
 
-    private ParrillaDePoder poderes;
-
+    //private ParrillaDePoder poderes;
     public Domino() {
         super(ALIAS, IDENTIDAD, Organizacion.MERCENARIOS);
-        this.poderes = new ParrillaDePoder(2, 2, 2, 2, 4, 6);
+        // this.poderes = new ParrillaDePoder(2, 2, 2, 2, 4, 6);
+        this.getPoder().setInteligencia(2);
+        this.getPoder().setFuerza(2);
+        this.getPoder().setVelocidad(2);
+        this.getPoder().setResistencia(2);
+        this.getPoder().setEnergia(4);
+        this.getPoder().setHabilidad(6);
 
     }
 
