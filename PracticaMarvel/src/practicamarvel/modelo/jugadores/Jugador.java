@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import practicamarvel.modelo.excepciones.EnergiaInsuficienteException;
 import practicamarvel.modelo.excepciones.EquipoCompletoException;
+import practicamarvel.modelo.excepciones.MonedasInsuficientesException;
 import practicamarvel.modelo.excepciones.MovimientosExcedidosException;
 import practicamarvel.modelo.excepciones.SuperheroeNoEncontradoException;
 import practicamarvel.modelo.movimientos.Movimiento;
@@ -26,9 +27,6 @@ public class Jugador {
     private final Organizacion organizacion;
 
     private final List<Superheroe> superheroes;
-
-    /* Cada jugador deberá configurar tantos movimientos como establezca el escenario*/
-    private List<Movimiento> movimientos;
 
     private int monedas;
 
@@ -63,19 +61,16 @@ public class Jugador {
         return partida;
     }
 
-    public List<Movimiento> getMovimientos() {
-        return movimientos;
-    }
-
     /**
      * Para comprar un superheroe comprobamos antes que tenemos dinero
-     * suficiente y que cabe en nuestro equipo. A continuacion restamos a
-     * nuestro presupuesto lo que nos ha costado el superheroe.
+     * suficiente y que cabe en nuestro equipo.A continuacion restamos a nuestro
+     * presupuesto lo que nos ha costado el superheroe.
      *
      * @param superheroe
      * @throws EquipoCompletoException
+     * @throws MonedasInsuficientesException
      */
-    public void comprarSuperheroe(Superheroe superheroe) throws EquipoCompletoException {
+    public void comprarSuperheroe(Superheroe superheroe) throws EquipoCompletoException, MonedasInsuficientesException {
 
         if (this.monedas >= superheroe.getCoste()) {
 
@@ -89,6 +84,10 @@ public class Jugador {
                 throw new EquipoCompletoException();
 
             }
+
+        } else {
+
+            throw new MonedasInsuficientesException();
 
         }
 
@@ -126,6 +125,43 @@ public class Jugador {
     public void eliminarSuperheroe(Superheroe superheroe) {
 
         this.superheroes.remove(superheroe);
+
+    }
+
+    /**
+     * Indica si quedan superheroes en el equipo.
+     *
+     * @return
+     */
+    public boolean quedanSuperheroes() {
+
+        if (this.superheroes.isEmpty()) {
+
+            return false;
+
+        } else {
+
+            return true;
+
+        }
+
+    }
+
+    /**
+     * Obtiene la energia total del equipo de superheroes.
+     *
+     * @return
+     */
+    public int getEnergiaDelEquipo() {
+
+        int energia = 0;
+
+        for (Superheroe superheroe : superheroes) {
+
+            energia = energia + superheroe.getEnergiaVital();
+
+        }
+        return energia;
 
     }
 }

@@ -230,6 +230,49 @@ public abstract class Superheroe extends Identificador {    //la defino como abs
 
     }
 
+    /**
+     * Tanto si se trata de un movimiento de ataque o defensa se modificara la
+     * energia de lucha del superheroe.Si la cantidad de lucha es mayor o igual
+     * a la energia real del movimiento se descontara de la energia de lucha la
+     * energia real y el movimiento se ejecutara. Si la cantidad de energia de
+     * lucha es mayor que cero, pero menor que la energia real del movimiento,
+     * se descuenta toda la energia de lucha hasta dejarla a 0 y el movimiento
+     * se ejecutara pero unicamente con la energia de lucha que le quedaba al
+     * superheroe. Si la cantidad de energia de lucha del superheroe es igual a
+     * 0, la energia real del movimiento de este jugador se establecera a 0.
+     *
+     * @param movDirigido
+     *
+     * @return
+     */
+    public Movimiento pelear(Superheroe movDirigido) {
+
+        Movimiento movimiento = null;
+
+        double energiaReal = movimiento.calcularEnergiaReal();
+
+        movimiento.setMovDirigido(movDirigido);
+
+        if (this.energiaLucha >= energiaReal) {
+
+            this.energiaLucha = (int) (this.energiaLucha - energiaReal);
+            movimiento.setEnergiaReal(energiaReal);
+
+        } else if ((this.energiaLucha > 0) && (this.energiaLucha < energiaReal)) {
+
+            movimiento.setEnergiaReal(this.energiaLucha);
+            this.energiaLucha = 0;
+
+        } else if (this.energiaLucha == 0) {
+
+            movimiento.setEnergiaReal(0);
+
+        }
+
+        return movimiento;
+
+    }
+
     /*
     @Override
     public String toString() {

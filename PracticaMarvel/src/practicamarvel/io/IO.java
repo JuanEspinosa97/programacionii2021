@@ -8,7 +8,8 @@ import java.io.ObjectOutputStream;
 import practicamarvel.almacen.AlmacenDatos;
 
 /**
- * Entrada/salida de mi app
+ * Entrada/salida de mi app. Se desea que todos los datos se almacenen en un
+ * fichero.
  *
  * @author Juan Espinosa Rodriguez <j.espinosa9@usp.ceu.es>
  */
@@ -16,7 +17,7 @@ public class IO {   //sacado de RacionalIO
 
     public static final String FICHERO = "practicaMarvel.dat";
 
-    public AlmacenDatos loadDatos() {
+    public static AlmacenDatos loadDatos() {
 
         File file = new File(FICHERO);
 
@@ -55,7 +56,7 @@ public class IO {   //sacado de RacionalIO
         return datosLeidos;
     }
 
-    public void saveDatos(AlmacenDatos datos) {
+    public static void saveDatos(AlmacenDatos datos) {
 
         File file = new File(FICHERO);
 
